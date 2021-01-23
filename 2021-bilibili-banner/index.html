@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        background-color: black;
+    }
+</style>
+<body>
+<!--<bilibili-banner></bilibili-banner>-->
+<div id="div-banner" is="bilibili-banner" data-attr=""></div>
+<template id="bilibili-banner">
+    <style>
+        .animated-banner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            min-height: 155px;
+            height: 9.375vw;
+            min-width: 999px;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            /* background-color: black; */
+        }
+        .layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* display: none; */
+        }
+        #canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+        }
+    </style>
+    <div class="animated-banner">
+        <div class="layer">
+            <img alt="" height="155" width="2016">
+        </div>
+        <div class="layer">
+            <img alt="" height="155" width="2016">
+        </div>
+        <div class="layer">
+            <img alt="" height="184" width="2400">
+        </div>
+        <div class="layer">
+            <video id="video" loop width="2016" height="155" style="object-fit: cover"></video>
+        </div>
+        <div class="layer">
+            <img alt="" height="155" width="2016">
+        </div>
+        <div class="layer">
+            <img alt="" height="155" width="2016">
+        </div>
+        <div class="layer">
+            <img alt="" height="155" width="2016">
+        </div>
+        <div class="layer">
+            <img alt="" height="155" width="2016">
+        </div>
+        <canvas id="canvas" height="155" width="1519"></canvas>
+    </div>
+</template>
+
+<script src="./tools/compatible.js"></script>
+<script src="./tools/tools.js"></script>
+<script>
+    window.banner = {};
+    window.banner.dataAttr = [
+        { type: 'img', src: './static/1.jpg', translateX: 0, blur: 0, opacity: 1, inherentTransform: 'scale(1) rotate(0)' },
+        { type: 'img', src: './static/2.jpg', translateX: 0, blur: 0, opacity: 1, inherentTransform: 'scale(1) rotate(0)' },
+        { type: 'img', src: './static/3.png', translateX: 40, blur: 0, opacity: 1, inherentTransform: 'scale(1) translateY(16px) rotate(10deg)' },
+        { type: 'video', src: './static/4.webm', translateX: 0, blur: 0, opacity: 0, inherentTransform: 'scale(1) rotate(0)' },
+        { type: 'img', src: './static/5.png', translateX: 0, blur: 0, opacity: 0, inherentTransform: 'scale(1) rotate(0)' },
+        { type: 'img', src: './static/6.png', translateX: 0, blur: 2, opacity: 1, inherentTransform: 'scale(1) rotate(0)' },
+        { type: 'img', src: './static/7.png', translateX: 0, blur: 2, opacity: 1, inherentTransform: 'scale(1) rotate(0)' },
+        { type: 'img', src: './static/8.png', translateX: 0, blur: 5, opacity: 0, inherentTransform: 'scale(1) rotate(0)' }
+    ];
+    // document.querySelector('#div-banner').setAttribute('data-attr', JSON.stringify(dataAttr));
+</script>
+<script src="./src/snow.js"></script>
+<script src="./src/banner.js"></script>
+</body>
+</html>
